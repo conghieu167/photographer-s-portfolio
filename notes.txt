@@ -1,0 +1,6 @@
+- Make the img zoom and see.
+- Re-design with white vibe
+- Work on my services and rules
+- Make portfolio part extend.
+- Make booking function.
+ 

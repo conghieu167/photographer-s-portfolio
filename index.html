@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hieu's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" size="32x32" href="Camere_icon.png">
+    <script src="https://kit.fontawesome.com/7a496f6a85.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div class="slider-wrapper">
+            <div class="slider">
+                <img id="slide-1" src="Sample/nino_ngang.jpg">
+                <img id="slide-2" src="Sample/yone_ngang.jpg">
+                <img id="slide-3" src="Sample/reze_ngang.jpg">
+                <img id="slide-4" src="Sample/yuji_ngang.jpg">
+            </div>
+            <div class="slider-nav">
+                <a href="#slide-1"></a>
+                <a href="#slide-2"></a>
+                <a href="#slide-3"></a>
+                <a href="#slide-4"></a>
+            </div>
+        </div>
+        <div class="nav-container">
+            <nav>
+                <img src="logotrang_nobg.png" class="logo">
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#services">Prices</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li class="fbicon">
+                        <a href="https://www.facebook.com/profile.php?id=100025894272198" target="_blank">
+                            <img class="fb" src="fb_icon_nobg.png">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- <div class="header-text">
+                <p>Hi I'm Cong Hieu</p>
+                <h1>A Newbie <span>Photographer</span></h1>
+                <h2>Checkout my pictures!</h2>
+            </div> -->
+    </div>
+    </div>
+    <!-- --------------------------Portfolio----------------------------- -->
+    <div id="portfolio">
+        <div class="full-img" id="fullImgBox">
+            <img src="Sample/mailya.jpg" id="fullImg">
+            <span onclick="closeFullImg()">X</span>
+        </div>
+        <div class="img-container">
+            <h1 class="sub-title">Portfolio</h1>
+            <div class="work-list">
+                <div class="dream">
+                    <div class="work"><img src="Sample/hwei.jpg" onclick="openFullImg(this)"></div>
+                    <div class="work"><img src="Sample/Nino.jpg" onclick="openFullImg(this)"></div>
+                </div>
+                <div class="dream">
+                    <div class="work"><img src="Sample/Robin.jpg" onclick="openFullImg(this)"></div>
+                    <div class="work"><img src="Sample/conan.jpg" onclick="openFullImg(this)"></div>
+                </div>
+                <div class="dream">
+                    <div class="work"><img src="Sample/Mitsuri.jpg" onclick="openFullImg(this)"></div>
+                    <div class="work"><img src="Sample/jade.jpg" onclick="openFullImg(this)"></div>
+                </div>
+            </div>
+        </div>
+        <div class="view-more">
+            <p>View more</p>
+        </div>
+    </div>
+    <!-- ----------------Services----------------------- -->
+    <div id="services">
+        <div id="container">
+            <div class="sub">
+                <h1 class="sub-title">Pricing</h1>
+            </div>
+            <div class="services-list">
+                <div>
+                    <h2><i>Single Photoshoot</i></h2>
+                    <h1>50.000 VND</h1>
+                    <ul>
+                        <li>Chụp liên tục trong 20 phút</li>
+                        <li>Hỗ trợ Pose dáng</li>
+                        <li>Tự lựa chọn 5 ảnh để retouch</li>
+                        <li>Trả ảnh Raw ngay trong đêm</li>
+                        <li>Trả ảnh Retouch sớm nhất trong 3 ngày</li>
+                    </ul>
+                    <a href="https://www.facebook.com/profile.php?id=100025894272198" target="_blank"><button class="book-now-btn">Book Now!</button></a>
+                </div>
+                <div>
+                    <h2><i>Couple Photoshoot</i></h2>
+                    <h1>40.000 VND / Người</h1>
+                    <ul>
+                        <li>Chụp liên tục trong 30 phút</li>
+                        <li>Hỗ trợ Pose dáng</li>
+                        <li>Tự lựa chọn 8 ảnh để retouch</li>
+                        <li>Trả ảnh Raw ngay trong đêm</li>
+                        <li>Trả ảnh Retouch sớm nhất trong 3 ngày</li>
+                    </ul>
+                    <a href="https://www.facebook.com/profile.php?id=100025894272198" target="_blank"><button class="book-now-btn">Book Now!</button></a>
+                </div>
+                <div>
+                    <h2><i>Group Photoshoot</i></h2>
+                    <h1>35.000 VND / Người</h1>
+                    <ul>
+                        <li>Chụp liên tục trong 10 phút / người</li>
+                        <li>Chụp dàn trong 20 phút</li>
+                        <li>Hỗ trợ Pose dáng</li>
+                        <li>Tự lựa chọn ảnh để retouch</li>
+                        <li>Trả ảnh Raw ngay trong đêm</li>
+                        <li>Trả ảnh Retouch sớm nhất trong 3 ngày</li>
+                    </ul>
+                    <a href="https://www.facebook.com/profile.php?id=100025894272198" target="_blank"><button class="book-now-btn">Book Now!</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- --------------------Feedback-------------------------->
+    <div id="reviews">
+        <div id="container">
+            <h1 class="sub-title">Reviews</h1>
+            <div class="reviews-list">
+                <div class="review">
+                    <img src="reviews/bxm.png">
+                </div>
+                <div class="review">
+                    <img src="reviews/nane.png">
+                </div>
+                <div class="review">
+                    <img src="reviews/ca.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ------------------------contact---------------------- -->
+    <div id="contact">
+        <div id="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-envelope"></i> taconghieu167@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> 0352401581</p>
+                    <div class="div social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=100025894272198" target="_blank"><i
+                                class="fa-brands fa-square-facebook"></i></a>
+                        <a href="https://www.instagram.com/chieuta.167/" target="_blank"><i
+                                class="fa-brands fa-square-instagram"></i></a>
+                        <a href="https://github.com/conghieu167" target="_blank"><i
+                                class="fa-brands fa-square-github"></i></a>
+                        <a href="https://www.linkedin.com/in/c%C3%B4ng-hi%E1%BA%BFu-t%E1%BA%A1-a00a5a32a/"
+                            target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <img class="last-logo" src="logotrang_nobg.png" class="logo">
+                    <p>Captures the art of cosplay through a camera lens.
+                        <!-- <a href="#header">
+                            <div class="back-to-top">
+                                <p>Back to Home <i class="fa-solid fa-arrow-up"></i></p>
+                            </div>
+                        </a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>© 2024 by Cong Hieu. Ranh qua nen ngoi lam</p>
+    </div>
+    <!-- ---------------------------script-------------------------- -->
+    <script>
+        // Initialize IntersectionObserver for a specific class of elements
+        function observeElements(selector) {
+            const elements = document.querySelectorAll(selector);
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.01 });
+
+            elements.forEach(element => observer.observe(element));
+        }
+
+        // Trigger IntersectionObserver on DOMContentLoaded for multiple sections
+        document.addEventListener("DOMContentLoaded", function () {
+            observeElements('.services-list div');
+            observeElements('.reviews-list div');
+            observeElements('.contact-left p');
+            observeElements('.sub-title');
+            observeElements('.view-more');
+            observeElements('.social-icons a');
+            observeElements('.contact-right img');
+            observeElements('.copyright p');
+            observeElements('.contact-right p');
+            observeElements('.img-container .work img');
+        });
+
+        // Slider functionality
+        document.addEventListener("DOMContentLoaded", function () {
+            const slides = document.querySelectorAll('.slider img');
+            const navButtons = document.querySelectorAll('.slider-nav a');
+
+            // Set active class on the current navigation button
+            function setActiveButton(index) {
+                navButtons.forEach((btn, i) => {
+                    btn.classList.toggle('active', i === index);
+                });
+            }
+
+            // Update active button when scrolling through slides
+            const slider = document.querySelector('.slider');
+            slider.addEventListener('scroll', () => {
+                const scrollLeft = slider.scrollLeft;
+                const slideWidth = slides[0].offsetWidth;
+                const currentIndex = Math.round(scrollLeft / slideWidth);
+                setActiveButton(currentIndex);
+            });
+
+            // Update active button when clicking a navigation button
+            navButtons.forEach((button, index) => {
+                button.addEventListener('click', () => {
+                    setActiveButton(index);
+                });
+            });
+
+            // Set the first button as active by default
+            setActiveButton(0);
+        });
+    </script>
+    <script>
+        var fullImgBox = document.getElementById("fullImgBox");
+        var fullImg = document.getElementById("fullImg");
+
+        function openFullImg(pic) {
+            fullImgBox.style.display = "flex";
+            fullImg.src = pic.src;
+        }
+
+        function closeFullImg() {
+            fullImgBox.style.display = "none";
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
