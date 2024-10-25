@@ -29,18 +29,20 @@
         <div class="nav-container">
             <nav>
                 <img src="logotrang_nobg.png" class="logo">
-                <ul>
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#services">Prices</a></li>
-                    <li><a href="#reviews">Reviews</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                <ul id="menu">
+                    <li><a href="#header" onclick="closeMenu()">Home</a></li>
+                    <li><a href="#portfolio" onclick="closeMenu()">Portfolio</a></li>
+                    <li><a href="#services" onclick="closeMenu()">Prices</a></li>
+                    <li><a href="#reviews" onclick="closeMenu()">Reviews</a></li>
+                    <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
                     <li class="fbicon">
                         <a href="https://www.facebook.com/profile.php?id=100025894272198" target="_blank">
                             <img class="fb" src="fb_icon_nobg.png">
                         </a>
                     </li>
+                    <i class="fa-solid fa-xmark" id="menuClose" onclick="closeMenu()"></i>
                 </ul>
+                <i class="fa-solid fa-bars" id="menuOpen" onclick="openMenu()"></i>
             </nav>
         </div>
         <!-- <div class="header-text">
@@ -74,7 +76,7 @@
             </div>
         </div>
         <div class="view-more">
-            <p>View more</p>
+            <button class="book-now-btn">View more</button>
         </div>
     </div>
     <!-- ----------------Services----------------------- -->
@@ -175,82 +177,6 @@
     <div class="copyright">
         <p>© 2024 by Cong Hieu. Ranh qua nen ngoi lam</p>
     </div>
-    <!-- ---------------------------script-------------------------- -->
-    <script>
-        // Initialize IntersectionObserver for a specific class of elements
-        function observeElements(selector) {
-            const elements = document.querySelectorAll(selector);
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.01 });
-
-            elements.forEach(element => observer.observe(element));
-        }
-
-        // Trigger IntersectionObserver on DOMContentLoaded for multiple sections
-        document.addEventListener("DOMContentLoaded", function () {
-            observeElements('.services-list div');
-            observeElements('.reviews-list div');
-            observeElements('.contact-left p');
-            observeElements('.sub-title');
-            observeElements('.view-more');
-            observeElements('.social-icons a');
-            observeElements('.contact-right img');
-            observeElements('.copyright p');
-            observeElements('.contact-right p');
-            observeElements('.img-container .work img');
-        });
-
-        // Slider functionality
-        document.addEventListener("DOMContentLoaded", function () {
-            const slides = document.querySelectorAll('.slider img');
-            const navButtons = document.querySelectorAll('.slider-nav a');
-
-            // Set active class on the current navigation button
-            function setActiveButton(index) {
-                navButtons.forEach((btn, i) => {
-                    btn.classList.toggle('active', i === index);
-                });
-            }
-
-            // Update active button when scrolling through slides
-            const slider = document.querySelector('.slider');
-            slider.addEventListener('scroll', () => {
-                const scrollLeft = slider.scrollLeft;
-                const slideWidth = slides[0].offsetWidth;
-                const currentIndex = Math.round(scrollLeft / slideWidth);
-                setActiveButton(currentIndex);
-            });
-
-            // Update active button when clicking a navigation button
-            navButtons.forEach((button, index) => {
-                button.addEventListener('click', () => {
-                    setActiveButton(index);
-                });
-            });
-
-            // Set the first button as active by default
-            setActiveButton(0);
-        });
-    </script>
-    <script>
-        var fullImgBox = document.getElementById("fullImgBox");
-        var fullImg = document.getElementById("fullImg");
-
-        function openFullImg(pic) {
-            fullImgBox.style.display = "flex";
-            fullImg.src = pic.src;
-        }
-
-        function closeFullImg() {
-            fullImgBox.style.display = "none";
-        }
-    </script>
     <script src="script.js"></script>
 </body>
 
