@@ -28,8 +28,8 @@ nav{
 }
 .logo{
     opacity: 0;
-    padding-left: 2%;
-    width:clamp(12rem,20vw,20rem);
+    padding-left: 1vw;
+    width:clamp(9rem,20vw,20rem);
     z-index: 2;
     animation: fly-from-left 1s ease forwards;
 }
@@ -104,7 +104,6 @@ nav ul li.fbicon a::after {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0,0%,0%,0.25);
 }
 .slider::-webkit-scrollbar {
 	display: none;
@@ -238,7 +237,7 @@ nav ul li.fbicon a::after {
 .sub-title{
     padding-bottom: 0.375rem;
     opacity: 0;
-    font-size: clamp(2rem, 1.384rem + 2.629vw, 3.75rem);
+    font-size: clamp(2.5rem, 2.019rem + 1.923vw, 3.75rem);
     font-weight: 300;
     color: black;
     font-family: forum,serif;
@@ -253,11 +252,11 @@ nav ul li.fbicon a::after {
     padding: 0 5% 5% 5%;
 }
 .sub{
+    border-bottom: 2px solid black;
     flex-direction: column;
     display: flex;
     align-items: center;
     justify-items: center;
-    border-bottom: #222 solid 0.15rem;
     margin: 0 25% 2rem 25%;
 }
 .services-list{
@@ -424,7 +423,6 @@ nav ul li.fbicon a::after {
 .view-more{
     opacity: 0;
     font-size: 1.3rem;
-    margin: 0 45% 0 45%;
     padding: 1rem;
     text-align: center;
     justify-content: center;
@@ -481,7 +479,7 @@ nav ul li.fbicon a::after {
 #contact{
     background: #262626;
     color: white;
-    padding: 2% 5% 1% 5%;
+    padding: 2% 5% 3% 5%;
 }
 .contact-left{
     flex-basis: 40%;
@@ -581,37 +579,14 @@ nav ul li.fbicon a::after {
     animation: fly-up  1s ease forwards;
 
 }
-.back-to-top{
-    border: 0.125rem solid white;
-    border-radius: 0.625rem;
-    padding: 1.5rem;
-    margin-top: 3.75rem;
-    background: black;
-    transition: 0.5s;
-}
-.back-to-top a{
-    text-decoration: none;
-}
-.back-to-top p{
-    font-family: sans-serif;
-    color: white;
-}
-.back-to-top:hover{
-    background-color: white;
-    color: black;
-    transform: translateY(-0.625rem);
-}
-.back-to-top:hover p{
-    color: black;
-}
 /* ----------------------css for smaller screen-------------------- */
 #menuOpen{
     display: none;
     color: white;
 }
-@media only screen and (max-width: 26.5625em){
+@media only screen and (max-width: 30em){
     #header{
-        height: 100vh;
+        height: 80vh;
     }
     #menuOpen{
         position: absolute;
@@ -640,11 +615,55 @@ nav ul li.fbicon a::after {
         top: 0;
         right: 0;
         width:50vw;
-        height: 100vh;
+        height: 110vh;
         padding-top:10vh;
+        z-index: 100;
     }
     nav ul li{
         margin: 20px;
+        border-bottom: white solid 2px;
+    }
+    .slider{
+        aspect-ratio: 9/16;
+    }
+    .slider img:nth-child(1){
+            content: url('Sample/ahri169.jpg');
+    }
+    .slider img:nth-child(2){
+            content: url('/Sample/ei169.jpg');
+    }
+    .slider img:nth-child(3){
+            content: url('Sample/ganyu169.jpg');
+    }
+    .slider img:nth-child(4){
+            content: url('Sample/nami169.jpg');
+    }
 
+    .contact{
+        flex-direction: row;
+    }
+    .contact-left p{
+        margin-left: 0;
+        font-family: 'Courier New', Courier, monospace;
+        margin-top: 0.5rem;
+        font-size: 1.25rem;
+        font-weight: 20;
+        transition: transform 0.5s;
+    }
+    .row{
+        justify-content: center;
+        flex-wrap:nowrap;
+        flex-direction: column;
+    }
+    .social-icons{
+        display: flex;
+        justify-content: left;
+        margin-left: 0;
+    }
+    .contact-right p{
+        text-align: center;
+    }
+    .contact-right img{
+        width:50vw;
     }
 } 
