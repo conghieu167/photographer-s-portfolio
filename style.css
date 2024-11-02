@@ -1,6 +1,8 @@
 html{
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
 }
+
 *{
     margin:0;
     padding:0;
@@ -26,7 +28,7 @@ body{
     z-index: 10000;
     bottom: 1rem;
     right: 2rem;
-    background: white;
+    background: rgba(255, 255, 255, 0.8);
     border: gray 2px solid;
     border-radius: 50%;
     transition: 0.5s ease;
@@ -265,7 +267,7 @@ nav ul li.fbicon a::after {
 .sub-title{
     padding-bottom: 0.375rem;
     opacity: 0;
-    font-size: clamp(2.5rem, 2.019rem + 1.923vw, 3.75rem);
+    font-size: clamp(2.75rem, 2.219rem + 1.923vw, 3.75rem);
     font-weight: 300;
     color: black;
     font-family: forum,serif;
@@ -295,16 +297,22 @@ nav ul li.fbicon a::after {
     margin-top: 50px;
 }
 .services-list div{
+    display: flex;
+    flex-direction: column;
     text-align: center;
     position: relative;
     padding: 2rem;
-    border: 0.1rem solid black;
-    border-radius: 0.75rem;
+    /* border: 0.1rem solid black; */
+    border-radius: 1rem;
     padding-bottom: 2rem;
     font-size: 0.8rem;
     font-weight: 300;
     opacity: 0;
     transition: background 0.5s, transform 0.5s;
+    box-shadow: 0 0.3125rem 1rem rgba(0,0,0,.2);
+}
+.services-list div a {
+    margin-top: auto; /* Pushes the button to the bottom */
 }
 .services-list div.visible{
     animation: fly-up 0.5s ease forwards; 
@@ -359,7 +367,22 @@ nav ul li.fbicon a::after {
     background-color: black;
     color: white;
 }
-
+.view-more-btn{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: white;
+    color: black;
+    border: black solid 0.15rem;
+    padding: 0.625rem 1.25rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: transform 0.5s, background 0.5s ease, color 0.5s ease;
+}
+.view-more-btn:hover {
+    transform: translateY(-0.3rem);
+    background-color: black;
+    color: white;
+}
 /* ------------portfolio------------------ */
 #portfolio{
     padding: 2% 5% 0 5%;
@@ -371,14 +394,12 @@ nav ul li.fbicon a::after {
     align-items: center;
     text-align: center;
 }
-.img-container .work img {
+.img-container .work{
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-
-/* Visible state when the image appears */
-.img-container .work img.visible {
+.img-container .work.visible {
     opacity: 1;
     transform: translateY(0);
 }
@@ -406,22 +427,19 @@ nav ul li.fbicon a::after {
     position: relative;
     overflow: visible;
     cursor: pointer;
-    transition: transform 0.2s linear;
+    transition: transform 0.5s ease;
 }
-
-.work:hover {
-    transform: scale(1.05);
-}
-
 .work img {
+    margin: 0.5rem 0;
     width: 100%;
     border-radius: 0.625rem;
     object-fit: cover;
     box-shadow: 0 0.3125rem 1rem rgba(0,0,0,.1);
-    transition: box-shadow 0.2s linear;
+    transition: box-shadow 0.2s linear,transform 0.5s ease;
 }
 
-.work:hover img {
+.work img:hover {
+    transform: scale(1.05);
     box-shadow: 0 0.625rem 1.5rem rgba(0, 0, 0, 0.3);
 }
 .full-img{
@@ -437,8 +455,9 @@ nav ul li.fbicon a::after {
     z-index: 100;
 }
 .full-img img{
-    max-width: 90%;
-    max-width: 31.25rem;
+    max-height: 90%;
+    max-width: auto;
+
 }
 .full-img span{
     position: absolute;
@@ -555,11 +574,14 @@ nav ul li.fbicon a::after {
     transition: transform 0.5s;
     opacity: 0;
 }
+.social-icons a i{
+    transition: transform 0.5s;
+}
 .social-icons a.visible{
     animation: fly-from-left 1s ease forwards;
 }
-.social-icons a:hover{
-    transform: translateY(-0.3125rem);
+.social-icons a i:hover{
+    transform: scale(1.1) translateY(-0.3125rem);
 }
 .social-icons a:nth-child(1){
     animation-delay: 0.2s;
@@ -586,7 +608,7 @@ nav ul li.fbicon a::after {
 }
 .contact-right p{
     font-family: 'Courier New', Courier, monospace;
-    font-size: 1.25rem;
+    font-size: clamp(0.75rem, 0.523rem + 0.808vw, 1.25rem);
     justify-content: center;
     opacity: 0;
     transform: 0.5s;
@@ -651,7 +673,6 @@ nav ul li.fbicon a::after {
     }
     nav ul li{
         margin: 20px;
-        border-bottom: white solid 2px;
     }
     .slider{
         aspect-ratio: 9/16;
@@ -692,8 +713,22 @@ nav ul li.fbicon a::after {
     }
     .contact-right p{
         text-align: center;
+
     }
     .contact-right img{
         width:50vw;
     }
+    .services-list div{
+        padding: 0.5rem;
+    }
+    .services-list div h1{
+        font-size:2.25rem;
+    }
+    .services-list div ul li {
+    font-size: 1.3rem;
+    }
+    .back-to-top{
+        right: 0.75rem;
+    }
+
 } 

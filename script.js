@@ -24,13 +24,17 @@ document.addEventListener("DOMContentLoaded", function () {
     observeElements('.contact-right img');
     observeElements('.copyright p');
     observeElements('.contact-right p');
-    observeElements('.img-container .work img');
+    observeElements('.img-container .work');
 });
 
 // Slider functionality
 document.addEventListener("DOMContentLoaded", function () {
     const slides = document.querySelectorAll('.slider img');
     const navButtons = document.querySelectorAll('.slider-nav a');
+    const slider = document.querySelector('.slider');
+    let currentIndex = 0; // Track the current slide index
+    const slideWidth = slides[0].offsetWidth;
+    const scrollInterval = 3000; // Time between slides in milliseconds
 
     // Set active class on the current navigation button
     function setActiveButton(index) {
@@ -39,25 +43,47 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Scroll to the next slide
+    function scrollToNextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length; // Loop back to the first slide after the last one
+        slider.scrollTo({
+            left: currentIndex * slideWidth,
+            behavior: 'smooth'
+        });
+        setActiveButton(currentIndex);
+    }
+
     // Update active button when scrolling through slides
-    const slider = document.querySelector('.slider');
     slider.addEventListener('scroll', () => {
         const scrollLeft = slider.scrollLeft;
-        const slideWidth = slides[0].offsetWidth;
-        const currentIndex = Math.round(scrollLeft / slideWidth);
-        setActiveButton(currentIndex);
+        const newIndex = Math.round(scrollLeft / slideWidth);
+        if (newIndex !== currentIndex) {
+            currentIndex = newIndex;
+            setActiveButton(currentIndex);
+        }
     });
 
-    // Update active button when clicking a navigation button
+    // Update active button and stop auto-scrolling when clicking a navigation button
     navButtons.forEach((button, index) => {
         button.addEventListener('click', () => {
-            setActiveButton(index);
+            currentIndex = index; // Update currentIndex to clicked button's index
+            slider.scrollTo({
+                left: currentIndex * slideWidth,
+                behavior: 'smooth'
+            });
+            setActiveButton(currentIndex);
         });
     });
 
     // Set the first button as active by default
     setActiveButton(0);
+
+    // Start automatic scrolling
+    setInterval(scrollToNextSlide, scrollInterval);
 });
+
+
+
 var fullImgBox = document.getElementById("fullImgBox");
 var fullImg = document.getElementById("fullImg");
 
@@ -89,3 +115,35 @@ function closeMenu() {
     }
 }
 
+let imgList1 = document.getElementsByClassName('dream')[0];
+let imgList2 = document.getElementsByClassName('dream')[1];
+let imgList3 = document.getElementsByClassName('dream')[2];
+let imgElement1 = document.createElement('div');
+let imgElement2 = document.createElement('div');
+let imgElement3 = document.createElement('div');
+const viewButton = document.getElementsByClassName('view-more-btn')[0];
+let isExpanded = false;
+imgElement1.classList.add('work','visible');
+imgElement2.classList.add('work','visible');
+imgElement3.classList.add('work','visible');
+imgElement1.innerHTML = '<img src="Sample/keqing.jpg" onclick="openFullImg(this)" class = "visible"> <img src="Sample/yone1.jpg" onclick="openFullImg(this)" class = "visible"> <img src="Sample/sawako1.jpg" onclick="openFullImg(this)" class = "visible"> <img src="Sample/tavy1.jpg" onclick="openFullImg(this)" class = "visible"> <img src="Sample/neon1.jpg" onclick="openFullImg(this)" class = "visible">';
+imgElement2.innerHTML = '<img src="Sample/ahri.jpg" onclick="openFullImg(this)" class = "visible"> <img src="Sample/yone2.jpg" onclick="openFullImg(this)" class = "visible"> <img src="Sample/sawako2.jpg" onclick="openFullImg(this)" class = "visible"> <img src="Sample/tavy3.jpg" onclick="openFullImg(this)" class = "visible"> <img src="Sample/neon3.jpg" onclick="openFullImg(this)" class = "visible">';
+imgElement3.innerHTML = '<img src="Sample/ruanmei.jpg" onclick="openFullImg(this)" class = "visible"> <img src="Sample/mailya.jpg" onclick="openFullImg(this)" class = "visible"> <img src="Sample/sawako3.jpg" onclick="openFullImg(this)" class = "visible"> <img src="Sample/tavy2.jpg" onclick="openFullImg(this)" class = "visible"> <img src="Sample/neon2.jpg" onclick="openFullImg(this)" class = "visible">';
+
+function toggleView() {
+    if (!isExpanded) {
+        viewButton.innerText = "View less";
+        imgList1.appendChild(imgElement1);
+        imgList2.appendChild(imgElement2);
+        imgList3.appendChild(imgElement3);
+    } else {
+        viewButton.innerText = "View more";
+        imgList1.removeChild(imgElement1);
+        imgList2.removeChild(imgElement2);
+        imgList3.removeChild(imgElement3);
+        document.getElementById('portfolio').scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+    isExpanded = !isExpanded;
+}
