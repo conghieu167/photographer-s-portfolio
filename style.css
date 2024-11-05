@@ -491,7 +491,7 @@ nav ul li.fbicon a::after {
 }
 .reviews-list{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
     grid-gap: 2.5rem;
     margin-top: 3.125rem;
 }
@@ -499,6 +499,7 @@ nav ul li.fbicon a::after {
     border-radius: 0.625rem;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 0.3125rem 1rem rgba(0, 0, 0, 0.2);
 }
 .review img{
     width: 100%;
